@@ -3,6 +3,7 @@ var vt = require('vt')
   , ScreenBuffer = require('screen-buffer')
   , EventEmitter = require('events').EventEmitter
   , inherits = require('util').inherits
+  , str_width = require('east-asian-width').str_width
 
 // # new HeadlessTerminal(cols, rows)
 //
@@ -118,8 +119,9 @@ HeadlessTerminal.prototype._convertAttribute = function(attr) {
 }
 
 function pad(str, width) {
-  if (str.length >= width) return str
-  var howMany = width - str.length
+  var len = str_width(str)
+  if (len >= width) return str
+  var howMany = width - len
   return str + new Array(howMany + 1).join(' ')
 }
 
