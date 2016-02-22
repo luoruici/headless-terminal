@@ -1,6 +1,6 @@
 {
   "name": "headless-terminal",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Headless xterm emulator using vt (terminal.js).",
   "main": "headless-terminal.js",
   "scripts": {
@@ -15,12 +15,10 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "east-asian-width": "^0.1.1",
-    "vt": "~0.1.1"
+    "vt": "~0.1.1",
+    "screen-buffer": "~0.4.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1"
-  },
-  "peerDependencies": {
-    "screen-buffer": "~0.4.0"
   }
 }
